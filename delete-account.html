@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete your Buildio account · Buildio</title>
+<link rel="icon" href="favicon.png">
+<style>
+  :root { --text: #1C1F1E; --muted: #5A615E; --accent: #3B4B97; --bg: #FFFFFF; --line: #E3E6E3; }
+  @media (prefers-color-scheme: dark) { :root { --text: #E8EAE9; --muted: #A9B0AD; --accent: #8E9BE0; --bg: #141615; --line: #2A2E2C; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 24px; }
+  .brand { display: inline-flex; }
+  .brand img { display: block; height: 34px; width: auto; }
+  @media (prefers-color-scheme: dark) { .brand img { filter: brightness(0) invert(1); } }
+  a { color: var(--accent); }
+  .hero { padding: 24px 0 8px; }
+  .hero h1 { font-size: 32px; line-height: 1.25; margin-bottom: 12px; }
+  .lead { font-size: 18px; color: var(--muted); }
+  .features { display: grid; gap: 16px; margin: 28px 0; }
+  .feature { border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .feature h3 { margin: 0 0 6px; font-size: 17px; }
+  .feature p { margin: 0; color: var(--muted); }
+  .soon { display: inline-block; margin-top: 8px; padding: 8px 14px; border-radius: 10px; background: var(--accent); color: #fff; font-weight: 600; font-size: 15px; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  footer a { margin-right: 14px; }
+  .switch button { border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+  .switch button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); font-weight: 600; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 28px 0 8px; }
+  p { margin: 0 0 12px; color: var(--text); }
+  .updated { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+  [data-lang] { display: none; }
+  body.zh [data-lang="zh"], body.en [data-lang="en"] { display: block; }
+</style>
+</head>
+<body class="en">
+<main>
+  <header>
+    <a class="brand" href="./"><img src="buildio-logo.png" alt="Buildio" height="34"></a>
+    <div class="switch">
+      <button type="button" data-set="en" aria-pressed="true">English</button>
+      <button type="button" data-set="zh" aria-pressed="false">中文</button>
+    </div>
+  </header>
+  <section data-lang="en"><h1>Delete your Buildio account</h1><p>In the Buildio app: open "Me" → scroll to the bottom → "Delete account", then confirm. Your account and all your data are permanently deleted straight away: profile, photo, jobs, offers, chats, reviews, and uploaded photos and files. Reports are kept for a while for safety reviews but are no longer linked to you.</p><p>If you can't sign in, email tf@buildio.co.nz from the address you signed up with, with the subject "Delete account". We'll process it and reply within 30 days.</p><footer>
+    <div><a href="privacy">Privacy Policy</a><a href="terms">Terms of Use</a><a href="delete-account">Delete account</a></div>
+    <p>© 2026 Buildio Limited · 14 Freshland Dr, Flat Bush, Auckland, New Zealand · <a href="mailto:tf@buildio.co.nz">tf@buildio.co.nz</a></p>
+  </footer></section>
+  <section data-lang="zh"><h1>删除 Buildio 账号</h1><p>在 Buildio app 里：打开「我的」→ 拉到最下面 →「删除账号」，按提示确认即可。删除后会立即永久删除你的账号和所有数据：个人资料、头像、需求单、报名、聊天记录、评价、上传的照片和文件。举报记录会保留一段时间用于安全审查，但不再关联到你的身份。</p><p>无法登录 app 的话，请用注册时的邮箱发邮件到 tf@buildio.co.nz，标题写「删除账号」，我们会在 30 天内处理并回复你。</p><footer>
+    <div><a href="privacy">隐私政策</a><a href="terms">用户协议</a><a href="delete-account">删除账号</a></div>
+    <p>© 2026 Buildio Limited · 新西兰奥克兰 Flat Bush, 14 Freshland Dr · <a href="mailto:tf@buildio.co.nz">tf@buildio.co.nz</a></p>
+  </footer></section>
+</main>
+<script>
+  function setLang(l) {
+    document.body.className = l;
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+    document.querySelectorAll('[data-set]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === l)); });
+  }
+  document.querySelectorAll('[data-set]').forEach(function (b) { b.onclick = function () { setLang(b.dataset.set); }; });
+  if ((navigator.language || '').toLowerCase().indexOf('zh') === 0) setLang('zh');
+</script>
+</body>
+</html>
